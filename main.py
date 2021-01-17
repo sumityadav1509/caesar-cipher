@@ -10,7 +10,7 @@ shift = int(input("Type the shift number:\n"))
     #e.g. 
     #plain_text = "hello"
     #shift = 5
-    
+
     #cipher_text = "mjqqt"
     #print output: "The encoded text is mjqqt"
 
@@ -20,33 +20,50 @@ shift = int(input("Type the shift number:\n"))
     ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
 
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
-def encode(text,shift):
- cipher_text="" 
- for letter in text:
-    position = alphabet.index(letter)
-    new_position = position + shift
-    new_letter = alphabet[new_position] 
-    cipher_text+=new_letter
+def caesar(direction,text,shift,):
+  end_text=""
+  for letter in text:
+    position=alphabet.index(letter)
+    if direction=="decode":
+      shift*=-1
+    new_position=position+shift
+    end_text+=alphabet[new_position]
+  print(f"The {direction}d text is {end_text}")  
 
- print(f"The encoded message is {cipher_text}")   
+caesar(direction,text,shift)
+
+
+
+
+
+
+# def encode(text,shift):
+#  cipher_text="" 
+#  for letter in text:
+#     position = alphabet.index(letter)
+#     new_position = position + shift
+#     new_letter = alphabet[new_position] 
+#     cipher_text+=new_letter
+
+#  print(f"The encoded message is {cipher_text}")   
 
 
   
 
-def decode(text,shift):
- decipher_text="" 
- for letter in text:
-    position=alphabet.index(letter)
-    new_position=position-shift
-    new_letter=alphabet[new_position]
-    decipher_text+=new_letter 
- print(f"The deciphered message is {decipher_text} ")    
+# def decode(text,shift):
+#  decipher_text="" 
+#  for letter in text:
+#     position=alphabet.index(letter)
+#     new_position=position-shift
+#     new_letter=alphabet[new_position]
+#     decipher_text+=new_letter 
+#  print(f"The deciphered message is {decipher_text} ")    
 
 
  
 
-if direction=="encode":
- encode(text,shift)
-elif direction=="decode":
- decode(text,shift)  
+# if direction=="encode":
+#  encode(text,shift)
+# elif direction=="decode":
+#  decode(text,shift)  
  
